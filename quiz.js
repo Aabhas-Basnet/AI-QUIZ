@@ -114,17 +114,17 @@ Update = function(){
       Time--;
    }
    
-   if (frameCount%500 == 0){
+   if (frameCount%375 == 0){
           TimeOut.play();
 		  QuestionNum++;
-		  Time = 20;	  
+		  Time = 15;	  
 	}
 	
 	if (RA){
 	   right.play();
 	   score += 10;
 	   QuestionNum++;
-	   Time = 20;
+	   Time = 15;
 	   frameCount = 0;
 	   RA = false; 
 	}
@@ -211,7 +211,7 @@ check = function(ans,word){
 Start = function() {
    QuestionNum =0;   
    score = 0;
-   Time = 20;
+   Time = 15;
 }
 
 
