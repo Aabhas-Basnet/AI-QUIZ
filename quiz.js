@@ -1,43 +1,3 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-<title>Quiz</title>
-<link rel="stylesheet" href="game.css">
-</head>
-
-<body> 
-<form><button class = "button" type ="submit" id="back" formaction="Index.html">BACK</button></form>
-
-<center>
-<div class="bg" id="quiz">
-
-<div class="ST_details">
-
-<div class="sec" id="sec1">
-<h2>Score</h2>
-<h2 id="score"></h2>
-</div>
-
-<div class="sec" id="sec2">
-<h2 id="timestr">Time</h2>
-<h2 id="time"></h2>
-</div>
-</div>
-
-<h2 id="question"></h2>
-
-<button id='answer' class="button" >SPEAK HERE</button>
-
-</div>
-
-</center>
-
-</body>
-
-	
-<script>
-
 const button = document.getElementById('answer');
 
 time = document.getElementById("time");
@@ -63,10 +23,19 @@ var HEIGHT = 500;
 
 var Play = false;
 
-var Words = ["SENSOR"];
+var Words = ["SINGAPORE","GREENLAND","ARABIAN","CANBERRA","NEPAL","AMAZON","RUSSIA","EVEREST","PACIFIC","SAHARA"];
 	
 	
-var Hints = [" A device that detects the change in the environtment and responds to some output in the other system"];
+var Hints = ["What is the Capital of Singapore ?",
+            "Which is the largest island in the world ?",
+            "What is the name of the largest peninsula of the world ?",
+            "What is the capital city of Australia ?",
+            "In which modern day country was lord Buddha born ?",
+            "Which is the largest river in the world ?",
+            "Which is the largest country in the world ?",
+            "What is the English name of the tallest mountain of the world ?",
+            "What is the name of the deepest occean in the world ?",
+            "Which is the hotest dessert in the world ?"]
 
 
 display = function(entity){
@@ -75,7 +44,7 @@ display = function(entity){
 
 PlayCheck = function(){
 	 if ( score>= 90 ){
-	   Play(score);
+	   clap1.play();
 	  }
 	
 	 if ( score< 90 && score>=60){
@@ -100,7 +69,6 @@ PlayCheck = function(){
 
 
 Update = function(){
-   
    if (GameOver){
       var Rating = "";
 	  button.remove();
@@ -129,15 +97,10 @@ Update = function(){
 	    PlayCheck();
 	  }
 	  
-	  frameCount++;
-	  
-	  if (frameCount == 200){
-	    location.reload();
-	  }
-	  
 	  document.getElementById('sec2').setAttribute('class','none');
 	  document.getElementById('sec1').setAttribute('class','change');
-	  
+	  document.getElementById("ANS").innerHTML = "What is the Capital of Singapore ? <br> SINGAPORE <br> Which is the largest island in the world ? <br> GREENLAND <br> What is the name of the largest peninsula of the world ? <br> ARABIAN <br> What is the capital city of Australia ? <br> CANBERRA <br> In which modern day country was lord Buddha born ? <br> NEPAL <br> Which is the largest river in the world ? <br> AMAZON <br> Which is the largest country in the world ? <br> RUSSIA <br> What is the English name of the tallest mountain of the world ? <br> EVEREST <br> What is the name of the deepest occean in the world ? <br> PACIFIC <br>  Which is the hotest dessert in the world ? <br> SAHARA <br>"
+
 	  document.getElementById("question").innerHTML = "Your score is " + Rating;
 	  
 	  return;
@@ -251,5 +214,3 @@ Start = function() {
 Start();
 setInterval(Update,40);
 setInterval(TakingInput,25);
-</script>
-</html>
