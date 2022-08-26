@@ -72,6 +72,7 @@ Update = function(){
    if (GameOver){
       var Rating = "";
 	  button.remove();
+	  document.getElementById("indicator").remove();
 	  
 	 if ( score>= 90 ){
 	   Rating = " amazing ";
@@ -169,7 +170,7 @@ TakingInput = function(){
     };
 	
 	recognition.onerror = function(event) {
-	  	document.getElementById('indicator').innerHTML="Off";
+	  	document.getElementById('indicator').innerHTML="Error";
 		document.getElementById('indicator').setAttribute('style','background:red');
 		button.classList.remove('none');
 	}    
