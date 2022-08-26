@@ -124,8 +124,28 @@ h3{
 @keyframes anim{
 	100%{
 		font-size: 1.2em;
+		color: red;
 	}
 }
+
+#indicator{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 6%;
+	height: 3%;
+	padding: 20px;
+	font-size: 1.5em;
+	background-color: red;
+	border-radius: 50%;
+	text-align:center;
+	color:#fff;
+}	
+
+span{
+	color: red;
+}
+
 
 @media only screen and (max-width:1200px){
 	.bg{
@@ -159,4 +179,10 @@ h3{
   h3{
 	font-size: 2em;
   }
+
+#indicator{
+	width: 10%;
+	height: 5%;
+}
+
 }
