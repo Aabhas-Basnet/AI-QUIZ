@@ -170,9 +170,9 @@ TakingInput = function(){
     };
 	
 	recognition.onerror = function(event) {
-	  	document.getElementById('indicator').innerHTML="Off";
-		document.getElementById('indicator').setAttribute('style','background:red');
-		button.disabled = false;
+	  	document.getElementById('indicator').innerHTML="On";
+		document.getElementById('indicator').setAttribute('style','background:green');
+		button.disabled = true;
 	}    
 
     recognition.onspeechend = function() {
