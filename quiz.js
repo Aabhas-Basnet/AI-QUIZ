@@ -10,7 +10,7 @@ Go= new Audio("AUDIO/Go.wav");
 clap2= new Audio("AUDIO/clap2.mp3");
 clap1= new Audio("AUDIO/clap1.mp3");
 
-var Time = 20;
+var Time = 15;
 var score = 0;
 
 var RA = false;
@@ -170,23 +170,23 @@ TakingInput = function(){
     };
 	
 	recognition.onerror = function(event) {
-	  	document.getElementById('indicator').innerHTML="Error";
+	  	document.getElementById('indicator').innerHTML="Off";
 		document.getElementById('indicator').setAttribute('style','background:red');
-		button.classList.remove('none');
+		button.disabled = false;
 	}    
 
     recognition.onspeechend = function() {
      	recognition.stop();
 		document.getElementById('indicator').innerHTML="Off";
 		document.getElementById('indicator').setAttribute('style','background:red');
-		button.classList.remove('none');
+		button.disabled = false;
     };      
 
     document.querySelector('#answer').addEventListener('click', function(){
         recognition.start();		
 	   	document.getElementById('indicator').innerHTML="On";
 	   	document.getElementById('indicator').setAttribute('style','background:green');
-	   	button.setAttribute('class','none');
+		button.disabled = true;
     });
 	
 }
