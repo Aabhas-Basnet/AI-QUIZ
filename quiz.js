@@ -170,21 +170,19 @@ TakingInput = function(){
     };
 	
 	recognition.onerror = function(event) {
-	  	document.getElementById('indicator').innerHTML="On";
-		document.getElementById('indicator').setAttribute('style','background:green');
-		button.disabled = true;
+		document.getElementById('indicator').setAttribute('style','background:yellow');
+		recognition.stop();
+		button.disabled = false;
 	}    
 
     recognition.onspeechend = function() {
      	recognition.stop();
-		document.getElementById('indicator').innerHTML="Off";
 		document.getElementById('indicator').setAttribute('style','background:red');
 		button.disabled = false;
     };      
 
     document.querySelector('#answer').addEventListener('click', function(){
         recognition.start();		
-	   	document.getElementById('indicator').innerHTML="On";
 	   	document.getElementById('indicator').setAttribute('style','background:green');
 		button.disabled = true;
     });
