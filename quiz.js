@@ -170,11 +170,7 @@ TakingInput = function(){
 
     recognition.onspeechend = function() {
      	recognition.stop();
-    };
-
-    recognition.onerror = function(event) {
-	  alert("Eror");
-	}        
+    };      
 
     document.querySelector('#answer').addEventListener('click', function(){
         recognition.start();	

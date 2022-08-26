@@ -44,6 +44,10 @@ h3{
  	justify-content: space-around;
 }
 
+#tutorial h2{
+ font-size: 2.5em;
+}
+
 .ST_details{
 	width: 100%;
 	display: flex;
@@ -143,7 +147,7 @@ h3{
 	}
 	
 	#question{
-		font-size:2.5em;
+		font-size:3.5em;
 	}
 	
 	
