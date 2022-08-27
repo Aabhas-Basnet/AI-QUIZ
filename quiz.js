@@ -145,6 +145,7 @@ UpdateQuestion = function(){
 
 TakingInput = function(){
 	
+	frameCount++;
     if(GameOver){
 	 return;
 	}
@@ -173,7 +174,6 @@ TakingInput = function(){
 		document.getElementById('indicator').setAttribute('style','background:yellow');
 		recognition.stop();
 		button.disabled = false;
-		
 	}    
 
     recognition.onspeechend = function() {
@@ -186,6 +186,12 @@ TakingInput = function(){
         recognition.start();		
 	   	document.getElementById('indicator').setAttribute('style','background:green');
 		button.disabled = true;
+		
+		console.log('in');
+		if (frameCount == 100){
+			recognition.onspeechend();
+			console.log('happened');
+		}
     });
 	
 }
@@ -216,5 +222,4 @@ Start = function() {
 
 Start();
 setInterval(Update,40);
-
-
+setInterval(TakingInput,25);
