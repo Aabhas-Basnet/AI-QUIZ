@@ -167,6 +167,10 @@ TakingInput = function(){
 		Answer = command.toUpperCase();
 		TakeAnswer(Answer);
     };
+	
+	recognition.onerror = function(event) {
+		document.getElementById('indicator').setAttribute('style','background:yellow');
+	}    
 
     recognition.onspeechend = function() {
      	recognition.stop();
