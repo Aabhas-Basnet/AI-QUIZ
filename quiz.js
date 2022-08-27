@@ -167,23 +167,15 @@ TakingInput = function(){
 		Answer = command.toUpperCase();
 		TakeAnswer(Answer);
     };
-	
-	recognition.onerror = function(event) {
-		document.getElementById('indicator').setAttribute('style','background:yellow');
-		recognition.stop();
-		button.disabled = false;
-	}    
 
     recognition.onspeechend = function() {
      	recognition.stop();
 		document.getElementById('indicator').setAttribute('style','background:red');
-		button.disabled = false;
     };      
 
     document.querySelector('#answer').addEventListener('click', function(){
         recognition.start();		
 	   	document.getElementById('indicator').setAttribute('style','background:green');
-		button.disabled = true;
     });
 	
 }
