@@ -184,13 +184,6 @@ TakingInput = function(){
         recognition.start();		
 	   	document.getElementById('indicator').setAttribute('style','background:green');
 		button.disabled = true;
-		
-			frameCount++;
-		console.log('in');
-		if (frameCount%25 ==0){
-			recognition.onspeechend();
-			console.log('happened');
-		}
     });
 	
 }
