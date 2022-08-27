@@ -146,6 +146,14 @@ span{
 	color: red;
 }
 
+#s1{
+	color: green;
+}
+
+#s1{
+	color: yellow;
+}
+
 
 @media only screen and (max-width:1200px){
 	.bg{
