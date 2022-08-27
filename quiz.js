@@ -173,6 +173,7 @@ TakingInput = function(){
 		document.getElementById('indicator').setAttribute('style','background:yellow');
 		recognition.stop();
 		button.disabled = false;
+		
 	}    
 
     recognition.onspeechend = function() {
@@ -215,4 +216,5 @@ Start = function() {
 
 Start();
 setInterval(Update,40);
-setInterval(TakingInput,25);
+
+
